@@ -1,101 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Awesome Matching Card Memory Game</title>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome Matching Card Memory Game</title>
 
-
-    </head>
-    <body>
-        <section class = 'memory_game'>
-            <div class = 'memory_card'>
-                <img class = 'hidden_face' src="images/card_hidden.jpg" alt="hidden">
-                <img class = 'face' src="images/card_1.png" alt="">
-            </div>
-
-            <div class = 'memory_card'>
-                <img class = 'hidden_face' src="images/card_hidden.jpg" alt="hidden">
-                <img class = 'face' src="images/card_1.png" alt="">
-            </div>
-
-            <div class = 'memory_card'>
-                <img class = 'hidden_face' src="images/card_hidden.jpg" alt="hidden">
-                <img class = 'face' src="images/card_1.png" alt="">
-            </div>
-
-            <div class = 'memory_card'>
-                <img class = 'hidden_face' src="images/card_hidden.jpg" alt="hidden">
-                <img class = 'face' src="images/card_1.png" alt="">
-            </div>
-
-            <div class = 'memory_card'>
-                <img class = 'hidden_face' src="images/card_hidden.jpg" alt="hidden">
-                <img class = 'face' src="images/card_1.png" alt="">
-            </div>
-
-            <div class = 'memory_card'>
-                <img class = 'hidden_face' src="images/card_hidden.jpg" alt="hidden">
-                <img class = 'face' src="images/card_1.png" alt="">
-            </div>
-
-            <div class = 'memory_card'>
-                <img class = 'hidden_face' src="images/card_hidden.jpg" alt="hidden">
-                <img class = 'face' src="images/card_1.png" alt="">
-            </div>
-
-            <div class = 'memory_card'>
-                <img class = 'hidden_face' src="images/card_hidden.jpg" alt="hidden">
-                <img class = 'face' src="images/card_1.png" alt="">
-            </div>
-
-            <div class = 'memory_card'>
-                <img class = 'hidden_face' src="images/card_hidden.jpg" alt="hidden">
-                <img class = 'face' src="images/card_1.png" alt="">
-            </div>
-
-            <div class = 'memory_card'>
-                <img class = 'hidden_face' src="images/card_hidden.jpg" alt="hidden">
-                <img class = 'face' src="images/card_1.png" alt="">
-            </div>
-
-            <div class = 'memory_card'>
-                <img class = 'hidden_face' src="images/card_hidden.jpg" alt="hidden">
-                <img class = 'face' src="images/card_1.png" alt="">
-            </div>
-
-            <div class = 'memory_card'>
-                <img class = 'hidden_face' src="images/card_hidden.jpg" alt="hidden">
-                <img class = 'face' src="images/card_1.png" alt="">
-            </div>
-
-            <div class = 'memory_card'>
-                <img class = 'hidden_face' src="images/card_hidden.jpg" alt="hidden">
-                <img class = 'face' src="images/card_1.png" alt="">
-            </div>
-
-            <div class = 'memory_card'>
-                <img class = 'hidden_face' src="images/card_hidden.jpg" alt="hidden">
-                <img class = 'face' src="images/card_1.png" alt="">
-            </div>
-
-            <div class = 'memory_card'>
-                <img class = 'hidden_face' src="images/card_hidden.jpg" alt="hidden">
-                <img class = 'face' src="images/card_1.png" alt="">
-            </div>
-
-            <div class = 'memory_card'>
-                <img class = 'hidden_face' src="images/card_hidden.jpg" alt="hidden">
-                <img class = 'face' src="images/card_1.png" alt="">
-            </div>
-        </section>
-        
-        <style>
+    <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+    
         .memory_game {
             width: 640px;
             height: 640px;
@@ -104,13 +19,13 @@
             flex-wrap: wrap;
             perspective: 1000px;
         }
-
+    
         body {  
             height: 100vh;
             display: flex;
             background: #0047ca;
         }
-
+    
         .memory_card {
             width: calc(25% - 10px);
             height: calc(33.333% - 10px);
@@ -120,32 +35,107 @@
             transform: scale(1);
             transition: transform .5s;
         }
-
-        .memory_card:active {
-            transform: scale(.97);
-            transition: transform .2s;
+    
+        .front_face,
+        .back_face {
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            position: absolute;
+            border-radius: 5px;
+            background: #0178ff;
+            backface-visibility: hidden;
         }
 
-        .memory_card.flip {
-            transform: rotateY(180deg);
-        }
+        
+        
 
-        .face,
-        .hidden_face {
-        width: 100%;
-        height: 100%;
-        padding: 20px;
-        position: absolute;
-        border-radius: 5px;
-        background: #0178ff;
-        backface-visibility: hidden;
-        }
-
-        .face {
-            transform: rotateY(180deg);
-        }
+        
         </style>
+    </head>
+    <body>
+        <section class = 'memory_game'>
+            <div class = 'memory_card card' id="memCard0">
+                <img class = 'front_face' src="images/card_hidden.jpg" alt="hidden">
+                <img class = 'back_face' id = "face0" src="" alt="">
+            </div>
 
-        <script src="script.js"></script>
+            <div class = 'memory_card card' id="memCard1">
+                <img class = 'front_face' src="images/card_hidden.jpg" alt="hidden">
+                <img class = 'back_face' id = "face1" src="" alt="">
+            </div>
+
+            <div class = 'memory_card card' id="memCard2">
+                <img class = 'front_face' src="images/card_hidden.jpg" alt="hidden">
+                <img class = 'back_face' id = "face2" src="" alt="">
+            </div>
+
+            <div class = 'memory_card card' id="memCard3">
+                <img class = 'front_face' src="images/card_hidden.jpg" alt="hidden">
+                <img class = 'back_face' id = "face3" src="" alt="">
+            </div>
+
+            <div class = 'memory_card card' id="memCard4">
+                <img class = 'front_face' src="images/card_hidden.jpg" alt="hidden">
+                <img class = 'back_face' id = "face4" src="" alt="">
+            </div>
+
+            <div class = 'memory_card card' id="memCard5">
+                <img class = 'front_face' src="images/card_hidden.jpg" alt="hidden">
+                <img class = 'back_face' id = "face5" src="" alt="">
+            </div>
+
+            <div class = 'memory_card card' id="memCard6">
+                <img class = 'front_face' src="images/card_hidden.jpg" alt="hidden">
+                <img class = 'back_face' id = "face6" src="" alt="">
+            </div>
+
+            <div class = 'memory_card card' id="memCard7">
+                <img class = 'front_face' src="images/card_hidden.jpg" alt="hidden">
+                <img class = 'back_face' id = "face7" src="" alt="">
+            </div>
+
+            <div class = 'memory_card card' id="memCard8">
+                <img class = 'front_face' src="images/card_hidden.jpg" alt="hidden">
+                <img class = 'back_face' id = "face8" src="" alt="">
+            </div>
+
+            <div class = 'memory_card card' id="memCard9">
+                <img class = 'front_face' src="images/card_hidden.jpg" alt="hidden">
+                <img class = 'back_face' id = "face9" src="" alt="">
+            </div>
+
+            <div class = 'memory_card card' id="memCard10">
+                <img class = 'front_face' src="images/card_hidden.jpg" alt="hidden">
+                <img class = 'back_face' id = "face10" src="" alt="">
+            </div>
+
+            <div class = 'memory_card card' id="memCard11">
+                <img class = 'front_face' src="images/card_hidden.jpg" alt="hidden">
+                <img class = 'back_face' id = "face11" src="" alt="">
+            </div>
+
+            <div class = 'memory_card card' id="memCard12">
+                <img class = 'front_face' src="images/card_hidden.jpg" alt="hidden">
+                <img class = 'back_face' id = "face12" src="" alt="">
+            </div>
+
+            <div class = 'memory_card card' id="memCard13">
+                <img class = 'front_face' src="images/card_hidden.jpg" alt="hidden">
+                <img class = 'back_face' id = "face13" src="" alt="">
+            </div>
+
+            <div class = 'memory_card card' id="memCard14">
+                <img class = 'front_face' src="images/card_hidden.jpg" alt="hidden">
+                <img class = 'back_face' id = "face14" src="" alt="">
+            </div>
+
+            <div class = 'memory_card card' id="memCard15">
+                <img class = 'front_face' src="images/card_hidden.jpg" alt="hidden">
+                <img class = 'back_face' id = "face15" src="" alt="">
+            </div>
+        </section>
+        
+        <script src="scripts.js"></script>
     </body>
 </html>
