@@ -102,6 +102,7 @@
             margin: auto;
             display: flex;
             flex-wrap: wrap;
+            perspective: 1000px;
         }
 
         body {  
@@ -115,17 +116,36 @@
             height: calc(33.333% - 10px);
             margin: 5px;
             position: relative;
+            transform-style: preserve-3d;
+            transform: scale(1);
+            transition: transform .5s;
         }
 
-        .front_face,
-        .back_face {
+        .memory_card:active {
+            transform: scale(.97);
+            transition: transform .2s;
+        }
+
+        .memory_card.flip {
+            transform: rotateY(180deg);
+        }
+
+        .face,
+        .hidden_face {
         width: 100%;
         height: 100%;
         padding: 20px;
         position: absolute;
         border-radius: 5px;
-        background: #1C7CCC;
+        background: #0178ff;
+        backface-visibility: hidden;
+        }
+
+        .face {
+            transform: rotateY(180deg);
         }
         </style>
+
+        <script src="script.js"></script>
     </body>
 </html>
